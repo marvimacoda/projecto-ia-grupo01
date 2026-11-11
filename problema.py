@@ -1,7 +1,7 @@
 """Interface genérica de um problema de busca + estrutura de nó.
 
 Os algoritmos de busca (buscas.py) só conhecem esta interface: trocar de
-problema não obriga a mudar nenhum algoritmo.
+problema não obriga a mudar nenhum algoritmo
 """
 from __future__ import annotations
 
