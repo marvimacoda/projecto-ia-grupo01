@@ -1,0 +1,237 @@
+{
+ "nome": "media_01",
+ "nivel": "media",
+ "indice": 1,
+ "semente": 202651,
+ "n_nos": 22,
+ "pai": [
+  -1,
+  0,
+  0,
+  0,
+  3,
+  0,
+  5,
+  3,
+  4,
+  4,
+  9,
+  8,
+  7,
+  9,
+  12,
+  10,
+  13,
+  12,
+  14,
+  18,
+  19,
+  20
+ ],
+ "carga_mw": [
+  0,
+  7,
+  7,
+  5,
+  7,
+  4,
+  4,
+  4,
+  2,
+  4,
+  2,
+  9,
+  4,
+  9,
+  6,
+  1,
+  1,
+  4,
+  2,
+  9,
+  4,
+  3
+ ],
+ "locais": [
+  "Armazem A",
+  "Armazem B",
+  "Local F1",
+  "Local F2",
+  "Local F3",
+  "Local F4",
+  "Local F5",
+  "Local F6",
+  "Local F7",
+  "Local F8"
+ ],
+ "ruas": [
+  [
+   0,
+   5,
+   10
+  ],
+  [
+   0,
+   8,
+   13
+  ],
+  [
+   0,
+   9,
+   26
+  ],
+  [
+   1,
+   2,
+   6
+  ],
+  [
+   1,
+   4,
+   6
+  ],
+  [
+   1,
+   6,
+   5
+  ],
+  [
+   1,
+   7,
+   9
+  ],
+  [
+   1,
+   8,
+   13
+  ],
+  [
+   2,
+   5,
+   10
+  ],
+  [
+   2,
+   6,
+   6
+  ],
+  [
+   2,
+   8,
+   12
+  ],
+  [
+   2,
+   9,
+   13
+  ],
+  [
+   3,
+   4,
+   10
+  ],
+  [
+   3,
+   7,
+   10
+  ],
+  [
+   4,
+   7,
+   3
+  ],
+  [
+   5,
+   6,
+   16
+  ],
+  [
+   5,
+   8,
+   3
+  ],
+  [
+   6,
+   8,
+   16
+  ],
+  [
+   6,
+   9,
+   9
+  ]
+ ],
+ "avarias": [
+  {
+   "id": "F1",
+   "no": 2,
+   "local": 2,
+   "reparo_min": 26,
+   "peca": null
+  },
+  {
+   "id": "F2",
+   "no": 4,
+   "local": 3,
+   "reparo_min": 37,
+   "peca": "transformador"
+  },
+  {
+   "id": "F3",
+   "no": 6,
+   "local": 4,
+   "reparo_min": 24,
+   "peca": "poste"
+  },
+  {
+   "id": "F4",
+   "no": 9,
+   "local": 5,
+   "reparo_min": 30,
+   "peca": null
+  },
+  {
+   "id": "F5",
+   "no": 11,
+   "local": 6,
+   "reparo_min": 37,
+   "peca": "poste"
+  },
+  {
+   "id": "F6",
+   "no": 13,
+   "local": 7,
+   "reparo_min": 21,
+   "peca": "poste"
+  },
+  {
+   "id": "F7",
+   "no": 18,
+   "local": 8,
+   "reparo_min": 18,
+   "peca": "transformador"
+  },
+  {
+   "id": "F8",
+   "no": 21,
+   "local": 9,
+   "reparo_min": 30,
+   "peca": "poste"
+  }
+ ],
+ "armazens": [
+  {
+   "poste": 1,
+   "isolador": 1,
+   "transformador": 1
+  },
+  {
+   "poste": 3,
+   "isolador": 0,
+   "transformador": 1
+  }
+ ],
+ "capacidade": 3,
+ "t_carga": 2,
+ "inicio": 0
+}

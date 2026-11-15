@@ -1,0 +1,194 @@
+{
+ "nome": "media_03",
+ "nivel": "media",
+ "indice": 3,
+ "semente": 202651,
+ "n_nos": 22,
+ "pai": [
+  -1,
+  0,
+  0,
+  2,
+  0,
+  3,
+  1,
+  4,
+  7,
+  5,
+  9,
+  8,
+  7,
+  8,
+  10,
+  14,
+  14,
+  13,
+  14,
+  14,
+  15,
+  16
+ ],
+ "carga_mw": [
+  0,
+  1,
+  2,
+  5,
+  6,
+  5,
+  4,
+  8,
+  4,
+  2,
+  4,
+  3,
+  1,
+  9,
+  9,
+  2,
+  6,
+  4,
+  8,
+  8,
+  2,
+  8
+ ],
+ "locais": [
+  "Armazem A",
+  "Armazem B",
+  "Local F1",
+  "Local F2",
+  "Local F3",
+  "Local F4",
+  "Local F5",
+  "Local F6",
+  "Local F7"
+ ],
+ "ruas": [
+  [
+   0,
+   1,
+   4
+  ],
+  [
+   0,
+   3,
+   8
+  ],
+  [
+   0,
+   8,
+   12
+  ],
+  [
+   1,
+   8,
+   8
+  ],
+  [
+   2,
+   4,
+   9
+  ],
+  [
+   2,
+   5,
+   16
+  ],
+  [
+   2,
+   7,
+   6
+  ],
+  [
+   3,
+   5,
+   15
+  ],
+  [
+   3,
+   6,
+   5
+  ],
+  [
+   4,
+   7,
+   3
+  ],
+  [
+   5,
+   6,
+   12
+  ],
+  [
+   5,
+   8,
+   27
+  ]
+ ],
+ "avarias": [
+  {
+   "id": "F1",
+   "no": 1,
+   "local": 2,
+   "reparo_min": 33,
+   "peca": "poste"
+  },
+  {
+   "id": "F2",
+   "no": 4,
+   "local": 3,
+   "reparo_min": 37,
+   "peca": null
+  },
+  {
+   "id": "F3",
+   "no": 10,
+   "local": 4,
+   "reparo_min": 32,
+   "peca": "poste"
+  },
+  {
+   "id": "F4",
+   "no": 12,
+   "local": 5,
+   "reparo_min": 37,
+   "peca": "isolador"
+  },
+  {
+   "id": "F5",
+   "no": 14,
+   "local": 6,
+   "reparo_min": 40,
+   "peca": null
+  },
+  {
+   "id": "F6",
+   "no": 15,
+   "local": 7,
+   "reparo_min": 28,
+   "peca": "transformador"
+  },
+  {
+   "id": "F7",
+   "no": 16,
+   "local": 8,
+   "reparo_min": 37,
+   "peca": "poste"
+  }
+ ],
+ "armazens": [
+  {
+   "poste": 2,
+   "isolador": 1,
+   "transformador": 2
+  },
+  {
+   "poste": 1,
+   "isolador": 0,
+   "transformador": 1
+  }
+ ],
+ "capacidade": 3,
+ "t_carga": 2,
+ "inicio": 0
+}

@@ -1,0 +1,115 @@
+{
+ "nome": "pequena_04",
+ "nivel": "pequena",
+ "indice": 4,
+ "semente": 202651,
+ "n_nos": 20,
+ "pai": [
+  -1,
+  0,
+  1,
+  2,
+  3,
+  4,
+  4,
+  6,
+  7,
+  4,
+  9,
+  6,
+  7,
+  11,
+  11,
+  14,
+  14,
+  16,
+  15,
+  15
+ ],
+ "carga_mw": [
+  0,
+  7,
+  6,
+  1,
+  7,
+  4,
+  9,
+  6,
+  7,
+  1,
+  4,
+  6,
+  9,
+  9,
+  8,
+  5,
+  8,
+  5,
+  4,
+  9
+ ],
+ "locais": [
+  "Armazem A",
+  "Armazem B",
+  "Local F1",
+  "Local F2"
+ ],
+ "ruas": [
+  [
+   0,
+   1,
+   18
+  ],
+  [
+   0,
+   3,
+   19
+  ],
+  [
+   1,
+   2,
+   20
+  ],
+  [
+   1,
+   3,
+   17
+  ],
+  [
+   2,
+   3,
+   10
+  ]
+ ],
+ "avarias": [
+  {
+   "id": "F1",
+   "no": 6,
+   "local": 2,
+   "reparo_min": 29,
+   "peca": "poste"
+  },
+  {
+   "id": "F2",
+   "no": 8,
+   "local": 3,
+   "reparo_min": 17,
+   "peca": "isolador"
+  }
+ ],
+ "armazens": [
+  {
+   "poste": 0,
+   "isolador": 0,
+   "transformador": 0
+  },
+  {
+   "poste": 2,
+   "isolador": 1,
+   "transformador": 0
+  }
+ ],
+ "capacidade": 3,
+ "t_carga": 2,
+ "inicio": 0
+}

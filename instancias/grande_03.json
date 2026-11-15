@@ -1,0 +1,322 @@
+{
+ "nome": "grande_03",
+ "nivel": "grande",
+ "indice": 3,
+ "semente": 202651,
+ "n_nos": 26,
+ "pai": [
+  -1,
+  0,
+  0,
+  1,
+  1,
+  0,
+  4,
+  2,
+  3,
+  6,
+  8,
+  7,
+  8,
+  11,
+  10,
+  12,
+  15,
+  12,
+  15,
+  18,
+  17,
+  20,
+  17,
+  22,
+  20,
+  21
+ ],
+ "carga_mw": [
+  0,
+  8,
+  2,
+  2,
+  6,
+  8,
+  2,
+  3,
+  3,
+  8,
+  6,
+  8,
+  3,
+  4,
+  2,
+  5,
+  8,
+  6,
+  7,
+  7,
+  2,
+  8,
+  8,
+  4,
+  1,
+  4
+ ],
+ "locais": [
+  "Armazem A",
+  "Armazem B",
+  "Local F1",
+  "Local F2",
+  "Local F3",
+  "Local F4",
+  "Local F5",
+  "Local F6",
+  "Local F7",
+  "Local F8",
+  "Local F9",
+  "Local F10",
+  "Local F11",
+  "Local F12"
+ ],
+ "ruas": [
+  [
+   0,
+   2,
+   3
+  ],
+  [
+   0,
+   3,
+   4
+  ],
+  [
+   0,
+   5,
+   7
+  ],
+  [
+   0,
+   6,
+   3
+  ],
+  [
+   1,
+   4,
+   13
+  ],
+  [
+   1,
+   10,
+   11
+  ],
+  [
+   1,
+   12,
+   10
+  ],
+  [
+   2,
+   6,
+   2
+  ],
+  [
+   2,
+   8,
+   7
+  ],
+  [
+   2,
+   9,
+   6
+  ],
+  [
+   2,
+   13,
+   4
+  ],
+  [
+   3,
+   4,
+   7
+  ],
+  [
+   3,
+   5,
+   4
+  ],
+  [
+   3,
+   11,
+   11
+  ],
+  [
+   4,
+   10,
+   17
+  ],
+  [
+   4,
+   12,
+   5
+  ],
+  [
+   5,
+   7,
+   9
+  ],
+  [
+   5,
+   10,
+   12
+  ],
+  [
+   5,
+   11,
+   7
+  ],
+  [
+   6,
+   8,
+   8
+  ],
+  [
+   6,
+   13,
+   3
+  ],
+  [
+   7,
+   8,
+   20
+  ],
+  [
+   7,
+   10,
+   10
+  ],
+  [
+   7,
+   11,
+   7
+  ],
+  [
+   7,
+   13,
+   10
+  ],
+  [
+   8,
+   9,
+   6
+  ],
+  [
+   9,
+   13,
+   7
+  ],
+  [
+   10,
+   11,
+   5
+  ]
+ ],
+ "avarias": [
+  {
+   "id": "F1",
+   "no": 3,
+   "local": 2,
+   "reparo_min": 14,
+   "peca": null
+  },
+  {
+   "id": "F2",
+   "no": 4,
+   "local": 3,
+   "reparo_min": 30,
+   "peca": "poste"
+  },
+  {
+   "id": "F3",
+   "no": 5,
+   "local": 4,
+   "reparo_min": 34,
+   "peca": "isolador"
+  },
+  {
+   "id": "F4",
+   "no": 7,
+   "local": 5,
+   "reparo_min": 23,
+   "peca": "poste"
+  },
+  {
+   "id": "F5",
+   "no": 8,
+   "local": 6,
+   "reparo_min": 24,
+   "peca": "transformador"
+  },
+  {
+   "id": "F6",
+   "no": 9,
+   "local": 7,
+   "reparo_min": 35,
+   "peca": "transformador"
+  },
+  {
+   "id": "F7",
+   "no": 11,
+   "local": 8,
+   "reparo_min": 29,
+   "peca": "isolador"
+  },
+  {
+   "id": "F8",
+   "no": 13,
+   "local": 9,
+   "reparo_min": 32,
+   "peca": null
+  },
+  {
+   "id": "F9",
+   "no": 17,
+   "local": 10,
+   "reparo_min": 14,
+   "peca": "transformador"
+  },
+  {
+   "id": "F10",
+   "no": 19,
+   "local": 11,
+   "reparo_min": 33,
+   "peca": "poste"
+  },
+  {
+   "id": "F11",
+   "no": 20,
+   "local": 12,
+   "reparo_min": 11,
+   "peca": "poste"
+  },
+  {
+   "id": "F12",
+   "no": 23,
+   "local": 13,
+   "reparo_min": 18,
+   "peca": "poste"
+  }
+ ],
+ "armazens": [
+  {
+   "poste": 4,
+   "isolador": 2,
+   "transformador": 2
+  },
+  {
+   "poste": 2,
+   "isolador": 0,
+   "transformador": 2
+  }
+ ],
+ "capacidade": 3,
+ "t_carga": 2,
+ "inicio": 0
+}

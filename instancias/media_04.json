@@ -1,0 +1,242 @@
+{
+ "nome": "media_04",
+ "nivel": "media",
+ "indice": 4,
+ "semente": 202651,
+ "n_nos": 22,
+ "pai": [
+  -1,
+  0,
+  0,
+  2,
+  2,
+  4,
+  5,
+  5,
+  7,
+  7,
+  6,
+  6,
+  10,
+  8,
+  12,
+  11,
+  11,
+  16,
+  13,
+  16,
+  15,
+  18
+ ],
+ "carga_mw": [
+  0,
+  5,
+  8,
+  3,
+  6,
+  7,
+  6,
+  6,
+  5,
+  2,
+  5,
+  8,
+  1,
+  3,
+  8,
+  8,
+  3,
+  9,
+  9,
+  1,
+  5,
+  9
+ ],
+ "locais": [
+  "Armazem A",
+  "Armazem B",
+  "Local F1",
+  "Local F2",
+  "Local F3",
+  "Local F4",
+  "Local F5",
+  "Local F6",
+  "Local F7",
+  "Local F8"
+ ],
+ "ruas": [
+  [
+   0,
+   1,
+   2
+  ],
+  [
+   0,
+   2,
+   7
+  ],
+  [
+   0,
+   3,
+   7
+  ],
+  [
+   0,
+   6,
+   5
+  ],
+  [
+   0,
+   7,
+   9
+  ],
+  [
+   0,
+   8,
+   13
+  ],
+  [
+   1,
+   2,
+   6
+  ],
+  [
+   1,
+   3,
+   7
+  ],
+  [
+   1,
+   6,
+   4
+  ],
+  [
+   1,
+   7,
+   10
+  ],
+  [
+   2,
+   4,
+   8
+  ],
+  [
+   2,
+   5,
+   7
+  ],
+  [
+   2,
+   7,
+   10
+  ],
+  [
+   3,
+   6,
+   6
+  ],
+  [
+   3,
+   8,
+   10
+  ],
+  [
+   4,
+   5,
+   11
+  ],
+  [
+   5,
+   6,
+   9
+  ],
+  [
+   5,
+   9,
+   10
+  ],
+  [
+   6,
+   9,
+   9
+  ],
+  [
+   7,
+   9,
+   22
+  ]
+ ],
+ "avarias": [
+  {
+   "id": "F1",
+   "no": 1,
+   "local": 2,
+   "reparo_min": 33,
+   "peca": null
+  },
+  {
+   "id": "F2",
+   "no": 2,
+   "local": 3,
+   "reparo_min": 36,
+   "peca": "transformador"
+  },
+  {
+   "id": "F3",
+   "no": 4,
+   "local": 4,
+   "reparo_min": 28,
+   "peca": null
+  },
+  {
+   "id": "F4",
+   "no": 6,
+   "local": 5,
+   "reparo_min": 31,
+   "peca": "poste"
+  },
+  {
+   "id": "F5",
+   "no": 7,
+   "local": 6,
+   "reparo_min": 14,
+   "peca": "poste"
+  },
+  {
+   "id": "F6",
+   "no": 9,
+   "local": 7,
+   "reparo_min": 40,
+   "peca": "poste"
+  },
+  {
+   "id": "F7",
+   "no": 10,
+   "local": 8,
+   "reparo_min": 25,
+   "peca": "poste"
+  },
+  {
+   "id": "F8",
+   "no": 20,
+   "local": 9,
+   "reparo_min": 32,
+   "peca": null
+  }
+ ],
+ "armazens": [
+  {
+   "poste": 3,
+   "isolador": 0,
+   "transformador": 1
+  },
+  {
+   "poste": 3,
+   "isolador": 0,
+   "transformador": 0
+  }
+ ],
+ "capacidade": 3,
+ "t_carga": 2,
+ "inicio": 0
+}

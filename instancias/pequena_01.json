@@ -1,0 +1,138 @@
+{
+ "nome": "pequena_01",
+ "nivel": "pequena",
+ "indice": 1,
+ "semente": 202651,
+ "n_nos": 20,
+ "pai": [
+  -1,
+  0,
+  1,
+  1,
+  3,
+  3,
+  3,
+  2,
+  7,
+  4,
+  6,
+  6,
+  11,
+  12,
+  11,
+  11,
+  13,
+  16,
+  14,
+  16
+ ],
+ "carga_mw": [
+  0,
+  2,
+  7,
+  2,
+  1,
+  5,
+  6,
+  6,
+  2,
+  6,
+  9,
+  2,
+  2,
+  9,
+  3,
+  9,
+  2,
+  1,
+  6,
+  4
+ ],
+ "locais": [
+  "Armazem A",
+  "Armazem B",
+  "Local F1",
+  "Local F2",
+  "Local F3"
+ ],
+ "ruas": [
+  [
+   0,
+   1,
+   2
+  ],
+  [
+   0,
+   2,
+   8
+  ],
+  [
+   0,
+   3,
+   14
+  ],
+  [
+   0,
+   4,
+   20
+  ],
+  [
+   1,
+   2,
+   10
+  ],
+  [
+   1,
+   3,
+   13
+  ],
+  [
+   2,
+   4,
+   14
+  ],
+  [
+   3,
+   4,
+   15
+  ]
+ ],
+ "avarias": [
+  {
+   "id": "F1",
+   "no": 6,
+   "local": 2,
+   "reparo_min": 12,
+   "peca": "poste"
+  },
+  {
+   "id": "F2",
+   "no": 16,
+   "local": 3,
+   "reparo_min": 36,
+   "peca": "transformador"
+  },
+  {
+   "id": "F3",
+   "no": 17,
+   "local": 4,
+   "reparo_min": 38,
+   "peca": "isolador"
+  }
+ ],
+ "armazens": [
+  {
+   "poste": 2,
+   "isolador": 1,
+   "transformador": 1
+  },
+  {
+   "poste": 0,
+   "isolador": 0,
+   "transformador": 0
+  }
+ ],
+ "capacidade": 3,
+ "t_carga": 2,
+ "inicio": 0
+}
