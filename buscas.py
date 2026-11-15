@@ -1,27 +1,172 @@
+"""Os 7 algoritmos de busca (genéricos: só conhecem a interface Problema).
+
+BFS, DFS, IDS, Custo Uniforme (UCS), Gulosa, A* e A* Ponderado (WA*).
+Cada algoritmo recebe (problema, ctx) e devolve o No objectivo ou None.
+`resolver(...)` corre um algoritmo com limites de tempo/memória e devolve
+um Resultado com as métricas pedidas.
+"""
+from __future__ import annotations
+
+import heapq
+import itertools
+import time
+import tracemalloc
+from collections import deque
+from dataclasses import dataclass
+from typing import Optional
+
+from problema import No, Problema, caminho
 
 
+class LimiteExcedido(Exception):
+    pass
 
 
+@dataclass
+class Limites:
+    tempo: float = 60.0                 # segundos
+    memoria: int = 2 * 1024 ** 3        # bytes (medidos com tracemalloc)
+    profundidade: int = 60              # DFS / IDS (nº máximo de acções)
 
 
+@dataclass
+class Resultado:
+    algoritmo: str
+    estado: str                         # "ok" | "falhou" | "sem_solucao"
+    motivo: str = ""
+    solucao: Optional[list] = None
+    custo: Optional[float] = None
+    comprimento: Optional[int] = None
+    expandidos: int = 0
+    gerados: int = 0
+    max_fronteira: int = 0
+    reexpandidos: int = 0
+    tempo: float = 0.0
+    memoria_pico: int = 0
 
 
+class Contexto:
+    """Contadores + verificação periódica dos limites."""
+
+    def __init__(self, limites: Limites):
+        self.limites = limites
+        self.t0 = time.perf_counter()
+        self.expandidos = 0
+        self.gerados = 0
+        self.max_fronteira = 0
+        self.reexpandidos = 0
+        self.cortou = False             # DFS/IDS: o limite de profundidade cortou ramos?
+        self._n = 0
+
+    def tick(self):
+        self._n += 1
+        if self._n & 127 == 0:
+            self.verificar()
+
+    def verificar(self):
+        if time.perf_counter() - self.t0 > self.limites.tempo:
+            raise LimiteExcedido("tempo")
+        if tracemalloc.is_tracing() and tracemalloc.get_traced_memory()[0] > self.limites.memoria:
+            raise LimiteExcedido("memoria")
 
 
+def _filho(p: Problema, no: No, a) -> No:
+    s2 = p.resultado(no.estado, a)
+    return No(s2, no, a, no.g + p.custo(no.estado, a, s2), no.profundidade + 1)
 
 
+# --------------------------------------------------------------------- BFS
+def bfs(p: Problema, ctx: Contexto):
+    """Busca em largura, com teste de objectivo na GERAÇÃO.
+
+    Devolve a solução com menos acções, NÃO a de menor custo: como os custos
+    dos passos são variáveis, o caminho mais curto em nº de passos pode custar
+    mais (p.ex. duas deslocações baratas vs um reparo longo com muita carga
+    desligada). Só seria óptima com custo de passo constante.
+    """
+    s0 = p.estado_inicial()
+    no0 = No(s0, None, None, 0, 0)
+    ctx.gerados = 1
+    if p.e_objectivo(s0):
+        return no0
+    fronteira = deque([no0])
+    visitados = {s0}
+    while fronteira:
+        no = fronteira.popleft()
+        ctx.expandidos += 1
+        ctx.tick()
+        for a in p.accoes(no.estado):
+            filho = _filho(p, no, a)
+            if filho.estado in visitados:
+                continue
+            ctx.gerados += 1
+            if p.e_objectivo(filho.estado):          # teste na geração
+                return filho
+            visitados.add(filho.estado)
+            fronteira.append(filho)
+        ctx.max_fronteira = max(ctx.max_fronteira, len(fronteira))
+    return None
 
 
+# --------------------------------------------------------------- DFS / IDS
+def _sem_ciclo(p: Problema, no: No) -> list:
+    """Sucessores cujo estado não aparece já no caminho raiz -> no."""
+    res = []
+    for a in p.accoes(no.estado):
+        s2 = p.resultado(no.estado, a)
+        n = no
+        while n is not None:
+            if n.estado == s2:
+                break
+            n = n.pai
+        else:
+            res.append(No(s2, no, a, no.g + p.custo(no.estado, a, s2), no.profundidade + 1))
+    return res
 
 
+def _dfs_limitado(p: Problema, ctx: Contexto, limite: int, vistos: Optional[set] = None):
+    pilha = [No(p.estado_inicial(), None, None, 0, 0)]
+    ctx.gerados += 1
+    while pilha:
+        no = pilha.pop()
+        if p.e_objectivo(no.estado):
+            return no
+        ctx.expandidos += 1
+        ctx.tick()
+        if vistos is not None:                       # instrumentação do IDS
+            if no.estado in vistos:
+                ctx.reexpandidos += 1
+            else:
+                vistos.add(no.estado)
+        filhos = _sem_ciclo(p, no)
+        if no.profundidade >= limite:
+            if filhos:
+                ctx.cortou = True
+            continue
+        ctx.gerados += len(filhos)
+        pilha.extend(reversed(filhos))               # explora na ordem das acções
+        ctx.max_fronteira = max(ctx.max_fronteira, len(pilha))
+    return None
 
 
+def dfs(p: Problema, ctx: Contexto):
+    """Busca em profundidade: controlo de ciclos no caminho + limite de profundidade
+    configurável (ctx.limites.profundidade). Não é completa com limite finito nem óptima."""
+    return _dfs_limitado(p, ctx, ctx.limites.profundidade)
 
 
-
-
-
-
+def ids(p: Problema, ctx: Contexto):
+    """Aprofundamento iterativo. Reporta ctx.reexpandidos = expansões de estados
+    que já tinham sido expandidos antes (nas iterações anteriores ou na mesma)."""
+    vistos = set()
+    for limite in range(ctx.limites.profundidade + 1):
+        ctx.cortou = False
+        no = _dfs_limitado(p, ctx, limite, vistos)
+        if no is not None:
+            return no
+        if not ctx.cortou:                           # espaço esgotado sem cortes
+            return None
+    return None                                       # ctx.cortou=True => falhou por profundidade
 
 
 # --------------------------------------------------------------------- UCS
